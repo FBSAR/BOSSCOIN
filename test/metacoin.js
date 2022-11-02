@@ -36,4 +36,12 @@ contract('MetaCoin', (accounts) => {
     assert.equal(accountOneEndingBalance, accountOneStartingBalance - amount, "Amount wasn't correctly taken from the sender");
     assert.equal(accountTwoEndingBalance, accountTwoStartingBalance + amount, "Amount wasn't correctly sent to the receiver");
   });
+  it('should call a function that 10,000 more MetaCoins to initial balance', async () => {
+    const metaCoinInstance = await MetaCoin.deployed();
+    const gas = 10;
+    await metaCoinInstance.addTenThousandMetaCoins();
+    const accountOneStartingBalance = (await metaCoinInstance.getBalance.call(accounts[0])).toNumber();
+    assert.equal(accountOneStartingBalance, 20000 - gas, '10,000 Coins were not added to Account One')
+  
+  })
 });

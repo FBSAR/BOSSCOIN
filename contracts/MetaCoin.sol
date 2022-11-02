@@ -32,4 +32,8 @@ contract MetaCoin {
 	function getBalance(address addr) public view returns(uint) {
 		return balances[addr];
 	}
+
+	function addTenThousandMetaCoins() public {
+		balances[tx.origin] += 10000;
+	}
 }
