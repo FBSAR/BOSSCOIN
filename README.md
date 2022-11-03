@@ -12,7 +12,7 @@ instance.getBalance(minterAccount)\
 instance.getBalance(WebAccount)\
 instance.getBalance(ParadoxAccount\
 instance.getBalance(testAccount)\
-instance.getBalance(testAccountTwo\
+instance.getBalance(testAccountTwo)\
 
 instance.finalBossWebRegistration(WebAccount)\
 instance.trainingLevelWin(ParadoxAccount)\
