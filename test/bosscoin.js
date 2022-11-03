@@ -34,7 +34,7 @@ contract("BossCoin", (accounts) => {
     assert.equal(accountOneEndingBalance, accountOneStartingBalance - amount, 'Amount wasnt correctly taken from the sender');
     assert.equal(accountTwoEndingBalance, accountTwoStartingBalance + amount, 'Amount wasnt correctly taken from the receiver');
   });
-  it("should send a registering user on finalbossar.com one free co", async () => {
+  it("should send a registering user on finalbossar.com one BossCoin", async () => {
     const bossCoinInstance = await BossCoin.deployed();
 
     // Setup Orinal Account & It's Initial Balance
