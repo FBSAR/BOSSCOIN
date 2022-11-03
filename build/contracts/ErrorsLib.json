@@ -1,0 +1,250 @@
+{
+  "contractName": "ErrorsLib",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "requested",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "available",
+          "type": "uint256"
+        }
+      ],
+      "name": "MinterNotEnoughFunds",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "requested",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "available",
+          "type": "uint256"
+        }
+      ],
+      "name": "UserNotEnoughFunds",
+      "type": "error"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"requested\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"available\",\"type\":\"uint256\"}],\"name\":\"MinterNotEnoughFunds\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"requested\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"available\",\"type\":\"uint256\"}],\"name\":\"UserNotEnoughFunds\",\"type\":\"error\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ErrorsLib.sol\":\"ErrorsLib\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ErrorsLib.sol\":{\"keccak256\":\"0xb683c5e30b23ac9079773483ba1c69bc547f0aeb901ac5afd72a92a7eb5ad201\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d01a207732ec25e7cf5604eae315ed766dfc0e5c0476aad729ba627e93aaad3c\",\"dweb:/ipfs/QmcNCgZeZzdMhoYgruitj9o1WQ93DE5XLV1sH3GhgXxDFV\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ffb078267ea75f663330ee5ae31798d67115cbe77914b6a0fdb0b1e10848b7eb64736f6c634300080d0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ffb078267ea75f663330ee5ae31798d67115cbe77914b6a0fdb0b1e10848b7eb64736f6c634300080d0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "58:143:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "58:143:2:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.13;\n\nlibrary ErrorsLib {\n  error MinterNotEnoughFunds(uint requested, uint available);\n  error UserNotEnoughFunds(uint requested, uint available);\n}\n",
+  "sourcePath": "/Users/ferro/Desktop/BOSSCOIN/contracts/ErrorsLib.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ErrorsLib.sol",
+    "exportedSymbols": {
+      "ErrorsLib": [
+        271
+      ]
+    },
+    "id": 272,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 258,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ErrorsLib",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 271,
+        "linearizedBaseContracts": [
+          271
+        ],
+        "name": "ErrorsLib",
+        "nameLocation": "66:9:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "errorSelector": "96fbcec4",
+            "id": 264,
+            "name": "MinterNotEnoughFunds",
+            "nameLocation": "86:20:2",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 260,
+                  "mutability": "mutable",
+                  "name": "requested",
+                  "nameLocation": "112:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 264,
+                  "src": "107:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 259,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "107:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 262,
+                  "mutability": "mutable",
+                  "name": "available",
+                  "nameLocation": "128:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 264,
+                  "src": "123:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 261,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "123:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "106:32:2"
+            },
+            "src": "80:59:2"
+          },
+          {
+            "errorSelector": "32f5b058",
+            "id": 270,
+            "name": "UserNotEnoughFunds",
+            "nameLocation": "148:18:2",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 269,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 266,
+                  "mutability": "mutable",
+                  "name": "requested",
+                  "nameLocation": "172:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 270,
+                  "src": "167:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 265,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "167:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 268,
+                  "mutability": "mutable",
+                  "name": "available",
+                  "nameLocation": "188:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 270,
+                  "src": "183:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 267,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "183:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "166:32:2"
+            },
+            "src": "142:57:2"
+          }
+        ],
+        "scope": 272,
+        "src": "58:143:2",
+        "usedErrors": [
+          264,
+          270
+        ]
+      }
+    ],
+    "src": "32:170:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-11-03T21:04:09.290Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
