@@ -1,6 +1,6 @@
 # Truffle Console commands for faster testing
 
-let instance = await BossCoin.deployed()
+let instance = await BossCoin.deployed()\
 let accounts = await web3.eth.getAccounts()
 let WebAccount = accounts[9]
 let ParadoxAccount = accounts[8]
@@ -25,3 +25,4 @@ instance.sendCoinFromMinter(testAccount, 10)
 instance.sendCoinFromMinter(testAccountTwo, 10)
 instance.sendCoinFromUser(testAccount, testAccountTwo, 5)
 
+git commit -m "Updated BossCoin Contract w/ additional Methods like mintCoins, deleteCoins, etc"
