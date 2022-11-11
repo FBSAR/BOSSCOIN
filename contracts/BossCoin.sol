@@ -3,10 +3,20 @@ pragma solidity >=0.4.22 <0.9.0;
 
 import "./ConvertLib.sol";
 import "./ErrorsLib.sol";
+import "./ERC20.sol";
 
-contract BossCoin {
+contract BossCoin is ERC20 {
+
   address public minter;
-  mapping (address => uint) balances;
+  uint public totalSupply;
+  mapping (address => uint) public balances;
+  mapping(address => mapping(address => uint)) public allowance;
+  string public name = "BossCoin";
+  string public symbol = "bossc";
+
+  // 18 is default amount of decimals
+  // uint8 public decimals = 18;
+  uint8 public decimals = 0;
 
   event CoinTransferFromMinter(address indexed _from, address indexed _to, uint256 _value);
   event CoinTransferFromUser(address indexed _from, address indexed _to, uint256 _value);
@@ -14,66 +24,50 @@ contract BossCoin {
   event ParadoxTrainingWin(address indexed _to);
 
   constructor() {
-    minter = msg.sender;
-    balances[minter] = 10000000;
+    minter = tx.origin;
+    // 120520000 = Amount of ETH in circulation as of 11/2022
+    balances[minter] = 120520000;
   }
 
-  // Minter Methods
-  // Only the Minter can use Functions with this modifier.
-  modifier onlyMinter() {
-    require(msg.sender == minter);
-    _;
+  function approve(address spender, uint amount) external returns (bool) {
+        allowance[msg.sender][spender] = amount;
+        emit Approval(msg.sender, spender, amount);
+        return true;
   }
 
-  // Add BossCoins to the Minter Account (original contract creating account)
-  function mintCoins(address reciever, uint amount) public onlyMinter returns(uint) {
-    balances[reciever] += amount;
-    return balances[reciever];
+  function balanceOf(address account) public view returns (uint) {
+        return balances[account];
   }
 
-  // Delete Bosscoins from Minter Account
-  function deleteCoins(address reciever, uint amount) public onlyMinter returns(uint) {
-    balances[reciever] -= amount;
-    return balances[reciever];
+  function transfer(address recipient, uint amount) external returns (bool) {
+        balances[minter] -= amount;
+        balances[recipient] += amount;
+        emit Transfer(minter, recipient, amount);
+        return true;
   }
 
-	function getBalance(address addr) public view returns(uint) {
-    return balances[addr];
-	}
-
-  // Used for sending BossCoin from Minter to User
-  // TODO: Test 
-  function sendCoinFromMinter(address reciever, uint amount) public onlyMinter {
-    if(balances[minter] < amount) {
-      revert ErrorsLib.MinterNotEnoughFunds(amount, balances[minter]);
+  function transferFrom(
+        address sender,
+        address recipient,
+        uint amount
+    ) external returns (bool) {
+        // allowance[sender][msg.sender] -= amount;
+        balances[sender] -= amount;
+        balances[recipient] += amount;
+        emit Transfer(sender, recipient, amount);
+        return true;
     }
-    balances[minter] -= amount;
-    balances[reciever] += amount;
-    emit CoinTransferFromMinter(minter, reciever, amount);
+  
+  function mint(uint amount) external {
+      balances[minter] += amount;
+      totalSupply += amount;
+      emit Transfer(address(0), minter, amount);
   }
 
-  // Used for sending BossCoin from User to User
-  // Used accounts[1] & accounts[2] for testing.
-  // TODO: Test 
-  function sendCoinFromUser(address sender, address reciever, uint amount) public {
-    if(balances[sender] < amount) {
-      revert ErrorsLib.UserNotEnoughFunds(amount, balances[msg.sender]);
-    }
-    balances[sender] -= amount;
-    balances[reciever] += amount;
-    emit CoinTransferFromUser(sender, reciever, amount);
-  }
-
-  // FinalBossAR Methods --
-
-  // When a User registers for FinalBossAR.com, they have the option of
-  // recieving 1 baus
-  // TODO: User can only earn this once.
-  // TODO: Test 
-  // For Ganache, use account[9] for testing purpurses.
-  function finalBossWebRegistration(address reciever) public {
-    this.sendCoinFromMinter(reciever, 1);
-    emit FinalBossWebRegistration(reciever);
+  function burn(uint amount) external {
+      balances[minter] -= amount;
+      totalSupply -= amount;
+      emit Transfer(minter, address(0), amount);
   }
 
   // Paradox Hazard Methods --
@@ -83,7 +77,7 @@ contract BossCoin {
   // TODO: Test 
   // For Ganache, use accounts[8] for testing purpurses.
   function trainingLevelWin(address reciever) public {
-    this.sendCoinFromMinter(reciever, 10);
+    this.transfer(reciever, 10);
     emit ParadoxTrainingWin(reciever);
   }
 
