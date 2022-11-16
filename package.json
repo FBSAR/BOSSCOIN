@@ -1,0 +1,29 @@
+{
+  "name": "bosscoin",
+  "version": "1.0.0",
+  "description": "Truffle Project for BossCoin",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FBSAR/BOSSCOIN.git"
+  },
+  "keywords": [
+    "Bosscon"
+  ],
+  "author": "Eddie Taliaferro II",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FBSAR/BOSSCOIN/issues"
+  },
+  "homepage": "https://github.com/FBSAR/BOSSCOIN#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.1",
+    "dotenv": "^16.0.3"
+  }
+}
