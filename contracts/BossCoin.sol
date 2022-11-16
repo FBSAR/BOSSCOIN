@@ -8,25 +8,30 @@ import "./ERC20.sol";
 contract BossCoin is ERC20 {
 
   address public minter;
-  uint public totalSupply;
+  
   mapping (address => uint) public balances;
   mapping(address => mapping(address => uint)) public allowance;
+  
   string public name = "BossCoin";
-  string public symbol = "bossc";
+  string public symbol = "boss";
+  string public tokenImage = 'https://final-boss-logos.s3.us-east-2.amazonaws.com/Logo_2.png';
+
 
   // 18 is default amount of decimals
   // uint8 public decimals = 18;
   uint8 public decimals = 0;
 
-  event CoinTransferFromMinter(address indexed _from, address indexed _to, uint256 _value);
-  event CoinTransferFromUser(address indexed _from, address indexed _to, uint256 _value);
   event FinalBossWebRegistration(address indexed _to);
   event ParadoxTrainingWin(address indexed _to);
 
   constructor() {
     minter = tx.origin;
     // 120520000 = Amount of ETH in circulation as of 11/2022
-    balances[minter] = 120520000;
+    balances[minter] = 1000000;
+  }
+
+  function totalSupply() external view returns (uint) {
+    return balances[minter];
   }
 
   function approve(address spender, uint amount) external returns (bool) {
@@ -58,16 +63,16 @@ contract BossCoin is ERC20 {
         return true;
     }
   
-  function mint(uint amount) external {
-      balances[minter] += amount;
-      totalSupply += amount;
+  function mint(uint amount) external returns (uint) {
       emit Transfer(address(0), minter, amount);
+      balances[minter] += amount;
+      return balances[minter];
   }
 
-  function burn(uint amount) external {
-      balances[minter] -= amount;
-      totalSupply -= amount;
+  function burn(uint amount) external returns (uint) {
       emit Transfer(minter, address(0), amount);
+      balances[minter] -= amount;
+      return balances[minter];
   }
 
   // Paradox Hazard Methods --

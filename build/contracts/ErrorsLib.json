@@ -48,15 +48,15 @@
     "absolutePath": "project:/contracts/ErrorsLib.sol",
     "exportedSymbols": {
       "ErrorsLib": [
-        348
+        351
       ]
     },
-    "id": 349,
+    "id": 352,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 335,
+        "id": 338,
         "literals": [
           "solidity",
           "^",
@@ -73,9 +73,9 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 348,
+        "id": 351,
         "linearizedBaseContracts": [
-          348
+          351
         ],
         "name": "ErrorsLib",
         "nameLocation": "66:9:3",
@@ -83,22 +83,22 @@
         "nodes": [
           {
             "errorSelector": "96fbcec4",
-            "id": 341,
+            "id": 344,
             "name": "MinterNotEnoughFunds",
             "nameLocation": "86:20:3",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 340,
+              "id": 343,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 337,
+                  "id": 340,
                   "mutability": "mutable",
                   "name": "requested",
                   "nameLocation": "112:9:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 341,
+                  "scope": 344,
                   "src": "107:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -107,7 +107,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 336,
+                    "id": 339,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "107:4:3",
@@ -120,12 +120,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 339,
+                  "id": 342,
                   "mutability": "mutable",
                   "name": "available",
                   "nameLocation": "128:9:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 341,
+                  "scope": 344,
                   "src": "123:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -134,7 +134,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 338,
+                    "id": 341,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "123:4:3",
@@ -152,22 +152,22 @@
           },
           {
             "errorSelector": "32f5b058",
-            "id": 347,
+            "id": 350,
             "name": "UserNotEnoughFunds",
             "nameLocation": "148:18:3",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 346,
+              "id": 349,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 343,
+                  "id": 346,
                   "mutability": "mutable",
                   "name": "requested",
                   "nameLocation": "172:9:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 347,
+                  "scope": 350,
                   "src": "167:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -176,7 +176,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 342,
+                    "id": 345,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "167:4:3",
@@ -189,12 +189,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 345,
+                  "id": 348,
                   "mutability": "mutable",
                   "name": "available",
                   "nameLocation": "188:9:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 347,
+                  "scope": 350,
                   "src": "183:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -203,7 +203,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 344,
+                    "id": 347,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "183:4:3",
@@ -220,11 +220,11 @@
             "src": "142:57:3"
           }
         ],
-        "scope": 349,
+        "scope": 352,
         "src": "58:143:3",
         "usedErrors": [
-          341,
-          347
+          344,
+          350
         ]
       }
     ],
@@ -236,7 +236,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-11T03:34:00.001Z",
+  "updatedAt": "2022-11-15T20:31:59.869Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

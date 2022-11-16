@@ -10,16 +10,16 @@ contract TestBossCoin {
   function testInitalBalancesUsingDeployedContract() public {
     BossCoin boss = BossCoin(DeployedAddresses.BossCoin());
 
-    uint expected = 10000000;
+    uint expected = 120520000 - 201;
 
-    Assert.equal(boss.getBalance(tx.origin), expected, 'Owner should have 10,000,000 BossCoin initially.');
+    Assert.equal(boss.balanceOf(tx.origin), expected, 'Owner should have 120,520,000 BossCoin initially.');
   }
 
   function testInitialBalanceWithNewBossCoin() public {
     BossCoin boss = new BossCoin();
 
-    uint expected = 10000000;
+    uint expected = 120520000;
 
-    Assert.equal(boss.getBalance(tx.origin), expected, "Owner should have 10,000,000 BossCoin initially");
+    Assert.equal(boss.balanceOf(tx.origin), expected, "Owner should have 120,520,000 BossCoin initially");
   }
 }
