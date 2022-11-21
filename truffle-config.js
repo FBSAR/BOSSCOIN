@@ -19,8 +19,8 @@
  */
 
 require('dotenv').config();
-const mnemonic = process.env["MNEMONIC"];
-const infuraProjectId = process.env["INFURA_PROJECT_ID"];
+const mnemonic = process.env.MNEMONIC;
+const alchemy = process.env.ALCHEMY_API_KEY;
  
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
@@ -49,9 +49,7 @@ module.exports = {
     // },
     //
     goerli: {
-      provider: () => new HDWalletProvider(
-        'van kangaroo hard since elephant invest banana school post nurse action inherit', 
-        'https://goerli.infura.io/v3/5d5f05ff741044718d97f33a4be675e8'),
+      provider: () => new HDWalletProvider(String(mnemonic), String(alchemy)),
       network_id: 5,       // Goerli's id
       chain_id: 5
     }
