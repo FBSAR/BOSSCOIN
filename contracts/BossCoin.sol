@@ -13,10 +13,7 @@ contract BossCoin is ERC20 {
   mapping(address => mapping(address => uint)) public allowance;
   
   string public name = "BossCoin";
-  string public symbol = "boss";
-  string public tokenImage = 'https://final-boss-logos.s3.us-east-2.amazonaws.com/Logo_2.png';
-
-
+  string public symbol = "bossc";
   // 18 is default amount of decimals
   // uint8 public decimals = 18;
   uint8 public decimals = 0;
@@ -27,7 +24,8 @@ contract BossCoin is ERC20 {
   constructor() {
     minter = tx.origin;
     // 120520000 = Amount of ETH in circulation as of 11/2022
-    balances[minter] = 1000000;
+    // Bitcoin has about 23 million coins in circulation
+    balances[minter] = 40000000;
   }
 
   function totalSupply() external view returns (uint) {

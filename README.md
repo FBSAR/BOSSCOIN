@@ -1,3 +1,4 @@
+
 # Ganache, MetaMask & Truffle Setup
 
 * Launch a fresh bossCoinContract of Ganache
@@ -64,6 +65,8 @@ let minterAccount = accounts[0]
 
 * Get Total Supply of BossCoins.
 var totalSupply = await bossCoinContract.totalSupply()\
+
+* toNumber() converts a BigNum (BN) in JavaScript to an Integer
 totalSupply.toNumber()
 
 * Minter methods for adding and removing coins from totalSupply.
@@ -98,6 +101,10 @@ balanceAccountTwo.toNumber()
 bossCoinContract.transferFrom(testAccount, testAccountTwo, 1)\
 
 bossCoinContract.transferFrom(testAccountTwo, testAccount, 1)
+
+bossCoinContract.transferFrom(testAccountTwo, minterAccount, 1000)
+
+bossCoinContract.transferFrom(testAccount, minterAccount, 1000)
 
 
 * FinalBossAR.com Methods
