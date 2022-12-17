@@ -14,7 +14,6 @@ contract BossCoin is ERC20 {
   
   string public name = "BossCoin";
   string public symbol = "bossc";
-  string public tokenImage = 'https://final-boss-logos.s3.us-east-2.amazonaws.com/F_Logo.svg';
   // 18 is default amount of decimals
   // uint8 public decimals = 18;
   uint8 public decimals = 0;
